@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>directive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <script src="angular.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="rootid">
+        <form name="form" novalidate>
+            <label>
+                choose color
+                <input type="text" name="color" ng-model="color" style="width:200px;" green/>
+            </label>
+
+        </br>
+            <span ng-show="form.color.$error.green">OMG</span>
+            <span ng-hide="form.color.$error.green">you choose wisely</span>
+        
+
+        </form>
+    
+        <form name="userform" novalidate>
+            </br>
+            <label >
+                enter name:
+                <input type="text" name = "inputname" ng-model = "inputname"  validnames/>
+                
+            </label></br>
+            <span ng-show="userform.inputname.$error.validnames">username is available</span>
+            <span ng-hide="userform.inputname.$error.validnames">hide</span>
+        </form>
+
+        <hr>
+        <form name="asyncform" novalidate>
+            <label >
+                checkasync
+                <input type="text" ng-model="username" name="username" checkasync/>
+            </label>
+            <span ng-show="asyncform.username.$pending.checkasync">checking--</span>
+            <span ng-show="asyncform.username.$error.checkasync">name is taken</span>
+            <span ng-show="asyncform.username.$touched && (!asyncform.username.$pending.checkasync && !asyncform.username.$error.checkasync)">name is available</span>
+        </form>
+
+    </div>
+</body>
+
+</html>
