@@ -45,7 +45,7 @@
             </label>
             <span ng-show="asyncform.username.$pending.checkasync">checking--</span>
             <span ng-show="asyncform.username.$error.checkasync">name is taken</span>
-            <span ng-show="asyncform.username.$touched && (!asyncform.username.$pending.checkasync && !asyncform.username.$error.checkasync)">name is available</span>
+            <span ng-show="asyncform.username.$dirty && !asyncform.username.$pending.checkasync && !asyncform.username.$error.checkasync">name is available</span>
         </form>
 
     </div>
